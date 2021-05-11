@@ -18,15 +18,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from mido device
+# Inherit from tissot device
 $(call inherit-product, device/xiaomi/tissot/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common ShapeShiftOS stuff.
+$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := tissot
-PRODUCT_NAME := aosp_tissot
+PRODUCT_NAME := ssos_tissot
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A1
@@ -34,15 +34,20 @@ PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES := 1080
+IS_PHONE := true
+
+# Inherit ShapeShiftOS Official build stuff.
+SSOS_BUILD_TYPE :=OFFICIAL
+TARGET_FACE_UNLOCK_SUPPORTED :=true
+TARGET_USES_BLUR := true
+
+PRODUCT_PRODUCT_PROPERTIES += \
+     ro.ssos.cpu=msm8953
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="tissot-user 8.0.0 OPR1.170623.026 8.1.10 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "xiaomi/tissot/tissot_sprout:8.0.0/OPR1.170623.026/8.1.10:user/release-keys"
-
-# PixelExperience Stuffs
-TARGET_GAPPS_ARCH := arm64
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_STOCK_ARCORE := false
-TARGET_INCLUDE_LIVE_WALLPAPERS := false

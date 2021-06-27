@@ -41,7 +41,6 @@ IS_PHONE := true
 # Inherit ShapeShiftOS Official build stuff.
 SSOS_BUILD_TYPE :=OFFICIAL
 TARGET_FACE_UNLOCK_SUPPORTED :=true
-TARGET_USES_BLUR := true
 
 PRODUCT_PRODUCT_PROPERTIES += \
      ro.ssos.cpu=msm8953

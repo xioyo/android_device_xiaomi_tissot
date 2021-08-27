@@ -21,12 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from tissot device
 $(call inherit-product, device/xiaomi/tissot/device.mk)
 
-# Inherit some common ShapeShiftOS stuff.
-$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
+# Inherit some common xdroid stuff.
+$(call inherit-product, vendor/xdroid/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := tissot
-PRODUCT_NAME := ssos_tissot
+PRODUCT_NAME := xdroid_tissot
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A1
@@ -38,12 +38,10 @@ TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 1080
 IS_PHONE := true
 
-# Inherit ShapeShiftOS Official build stuff.
-SSOS_BUILD_TYPE :=OFFICIAL
-TARGET_FACE_UNLOCK_SUPPORTED :=true
-
-PRODUCT_PRODUCT_PROPERTIES += \
-     ro.ssos.cpu=msm8953
+# Inherit xdroid build stuff.
+XDROID_BUILD_TYPE := OBT
+XDROID_BOOT_DARK := true
+XDROID_UI_BLUR := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="tissot-user 8.0.0 OPR1.170623.026 8.1.10 release-keys"

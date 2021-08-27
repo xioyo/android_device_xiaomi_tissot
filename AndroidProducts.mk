@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/ssos_tissot.mk
+    $(LOCAL_DIR)/xdroid_tissot.mk
 
 COMMON_LUNCH_CHOICES := \
-    ssos_tissot-user \
-    ssos_tissot-userdebug \
-    ssos_tissot-eng
+    xdroid_tissot-user \
+    xdroid_tissot-userdebug \
+    xdroid_tissot-eng

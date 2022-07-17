@@ -14,4 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_tissot.mk
+    $(LOCAL_DIR)/fluid_tissot.mk
+
+COMMON_LUNCH_CHOICES := \
+    fluid_tissot-user \
+    fluid_tissot-userdebug \
+    fluid_tissot-eng
